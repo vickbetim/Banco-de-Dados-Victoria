@@ -1,0 +1,37 @@
+CREATE TABLE tb_cidades(
+cod_cidade INTEGER PRIMARY KEY,
+nome_cidade VARCHAR(50) NOT NULL,
+estadocid VARCHAR(2) CHECK (estadocid IN ('PR'))
+);
+
+CREATE TABLE tb_clientes(
+cod_cliente INTEGER PRIMARY KEY,
+cod_cidade 
+nome_cliente VARCHAR(50) NOT NULL,
+telefone BIGINT CHECK (telefone IN ('(*)*-**')),
+gmail VARCHAR(50),
+cpf BIGINT(11) NOT NULL CHECK (cpf IN ('*.*.*-**')),
+tipocliente CHAR(1) DEFAULT 'A',
+ativo CHAR(1) DEFAULT 'S'
+);
+
+CREATE TABLE tb_cidades_clientes
+(
+  cod_cliente INT,
+  cod_cidade INT,
+  PRIMARY KEY (cod_cidade,cod_cliente) CONSTRAINT FK_cidades FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod_cidade),
+  CONSTRAINT fk_clientes FOREIGN KEY(cod_cliente) REFERENCES tb_clientes(cod_cliente));
+
+ 
+INSERT INTO tb_clientes (cod_cliente,cod_cidade, nome_cliente, telefone, gmail, cpf, tipocliente, ativo) VALUES
+(1, 'AC','Bruna Betim', 45991424987,'brunabetim@gmail.com', 09798132106, 'a', 's'),
+(2, 'AC','Bruna Beatriz', 45995624987,'brubeatriz@gmail.com', 09773932106, 'c', 's'),
+(3, 'AC','Maria Cecilia', 45991424016,'mariaac@gmail.com', 03488132106, 'c', 's'),
+(4, 'AC','Guilherme Dennis', 45993668087,'dennisgui@gmail.com', 09798881406, 'a', 's'),
+(5, 'AC','Thainara ', 45991427652,'thainarall@gmail.com', 09053932106, 'a', 's'),
+(6, 'AC','Jean Luca', 45999338088,'lucajean@gmail.com', 03549246937, 'a', 's'),
+(7, 'AC','Pricila Alves', 45995971987, 'alvessp@gmail.com', 06599132106, 'c', 's'),
+(8, 'AC','Murilo Barreto', 45933490987,'barretomuri@gmail.com', 06680133106, 'c', 's'),
+(9, 'AC','Laura Sophie', 45999591711,'laurasoph@gmail.com', 04598182106, 'a', 's'),
+(10, 'AC','Roseli Adriana', 45934824977,'adriana12@gmail.com', 03596042106, 'a', 's');
+COMMIT;
