@@ -60,7 +60,8 @@ CREATE TABLE tb_cidades (
 
 INSERT INTO tb_clientes (cod_cliente, nome_cliente, telefone, gmail, cpf, rua, complemento, bairro, numero, ativo, tipo_cadastro) VALUES 
 ('1','Patrick','45984216988','ncpatrick@gmail.com','09657712366','ESTOCOMOLO','CASA','CASCAVEL VELHO','789','S','C');
-('2','Priscila','459996502','priscila.alv@gmail.com','03457712306','RUA PIO XII','CASA','CANCELLI','650','S','C'); ('3','Laura','45984213248','laurasophi@gmail.com','09602231366','RUA ALEXANDRE MULLER','APARTAMENTO','CLAUDETE','91','S','C');
+('2','Priscila','459996502','priscila.alv@gmail.com','03457712306','RUA PIO XII','CASA','CANCELLI','650','S','C'); 
+('3','Laura','45984213248','laurasophi@gmail.com','09602231366','RUA ALEXANDRE MULLER','APARTAMENTO','CLAUDETE','91','S','C');
 ('4','Oliver Gabriel','45984299873','gabrieloli@gmail.com','09657226750','RUA EUROPA','CASA','MORUMBI','56','S','C');
 ('5','Rosângela ','45999064438','rosangelanasci@gmail.com','09657997606','RUA VERMELHA','APARTAMENTO','JARDIM MONTAVANI','02','S','C'); 
 COMMIT;
