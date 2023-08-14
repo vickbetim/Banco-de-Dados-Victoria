@@ -54,13 +54,6 @@ FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
 
-
-CREATE TABLE tb_cidades (
-  codcid INT PRIMARY KEY,
-  nomecid VARCHAR(50) NOT NULL,
- estadocid VARCHAR(2) CHECK (estado IN ('PR'))
-);
-
 INSERT INTO tb_clientes (cod_cliente, nome_cliente, telefone, gmail, cpf, rua, complemento, bairro, numero, ativo, tipo_cadastro) VALUES 
 ('1','Patrick','45984216988','ncpatrick@gmail.com','09657712366','ESTOCOMOLO','CASA','CASCAVEL VELHO','789','S','C');
 ('2','Priscila','459996502','priscila.alv@gmail.com','03457712306','RUA PIO XII','CASA','CANCELLI','650','S','C'); 
