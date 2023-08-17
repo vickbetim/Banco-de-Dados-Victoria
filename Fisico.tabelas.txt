@@ -1,17 +1,19 @@
+
+
 CREATE TABLE tb_cidades (
 cod_cidade INT AUTO_INCREMENT PRIMARY KEY,
 nome_cidade VARCHAR(50) NOT NULL,  
 estado_cidade CHAR(2) CHECK (estado_cidade IN ('PR'))
 );
 CREATE TABLE tb_clientes(
-cod_cliente INT PRIMARY KEY,
+cod_cliente INT AUTO_INCREMENT PRIMARY KEY,
 cod_cidade INT,
 cod_cidcliente VARCHAR(50) NOT NULL,
 nome VARCHAR(50) NOT NULL,
 telefone BIGINT ,
 gmail VARCHAR(50),
 cpf BIGINT(11) NOT NULL,
-tipocliente VARCHAR(50),
+tipocliente VARCHAR(1),
 ativo VARCHAR(1),
 complemento VARCHAR(11),
 rua VARCHAR(50),
@@ -20,39 +22,38 @@ bairro VARCHAR(50),
 FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod_cidade)
 );
 CREATE TABLE tb_compras (
-cod_compra INT  PRIMARY KEY,
+cod_compra INT AUTO_INCREMENT PRIMARY KEY,
 cod_cliente INT,
 cod_entrega VARCHAR(50),
 valor_entrega FLOAT(5,2),
-tipo_pagamento VARCHAR(8),
+tipo_pagamento VARCHAR(1),
 data_compra DATE,
 FOREIGN KEY (cod_cliente) REFERENCES tb_clientes(cod_cliente)
 );
- CREATE TABLE tb_compras_produtos (
-cod_compra_produto INT AUTO_INCREMENT,
-cod_compra INTEGER,
-cod_produto INTEGER,
-quantidade VARCHAR(50),
-valor FLOAT(5,2),
-PRIMARY KEY(cod_compra_produto),
-FOREIGN KEY (cod_compra) REFERENCES tb_compras(cod_compra),
-FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
-);
-
  CREATE TABLE tb_produtos (
 cod_produto INT AUTO_INCREMENT PRIMARY KEY,
-ativo VARCHAR(50) NOT NULL,
+ativo VARCHAR(1) NOT NULL,
 valor FLOAT(5,2),
 tamanho BIGINT,
 descricao VARCHAR(50));
 
 CREATE TABLE tb_imagens_produtos(
-cod_imagem_produto INT PRIMARY KEY,
+cod_imagem_produto INT AUTO_INCREMENT PRIMARY KEY,
 cod_produto INT,
 imagem_produto VARCHAR(50),
 FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
+ CREATE TABLE tb_compras_produtos (
+cod_compra_produto INT AUTO_INCREMENT,
+cod_compra INTEGER,
+cod_produto INTEGER,
+quantidade INTEGER,
+valor FLOAT(5,2),
+PRIMARY KEY(cod_compra_produto),
+FOREIGN KEY (cod_compra) REFERENCES tb_compras(cod_compra),
+FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
+);
 
 INSERT INTO tb_clientes (cod_cliente, nome_cliente, telefone, gmail, cpf, rua, complemento, bairro, numero, ativo, tipo_cadastro) VALUES 
 ('1','Patrick','45984216988','ncpatrick@gmail.com','09657712366','ESTOCOMOLO','CASA','CASCAVEL VELHO','789','S','C');
