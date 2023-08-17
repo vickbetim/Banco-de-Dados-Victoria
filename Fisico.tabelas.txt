@@ -1,5 +1,3 @@
-
-
 CREATE TABLE tb_cidades (
 cod_cidade INT AUTO_INCREMENT PRIMARY KEY,
 nome_cidade VARCHAR(50) NOT NULL,  
@@ -13,8 +11,8 @@ nome VARCHAR(50) NOT NULL,
 telefone BIGINT ,
 gmail VARCHAR(50),
 cpf BIGINT(11) NOT NULL,
-tipocliente VARCHAR(1),
-ativo VARCHAR(1),
+tipocliente VARCHAR(1) DEFAULT 'S' CHECK (tipocliente IN ('S', 'N')),
+ativo VARCHAR(1) DEFAULT 'S' CHECK (ativo IN ('S', 'N')),
 complemento VARCHAR(11),
 rua VARCHAR(50),
 numero BIGINT,
@@ -26,13 +24,13 @@ cod_compra INT AUTO_INCREMENT PRIMARY KEY,
 cod_cliente INT,
 cod_entrega VARCHAR(50),
 valor_entrega FLOAT(5,2),
-tipo_pagamento VARCHAR(1),
+tipo_pagamento VARCHAR(1) DEFAULT 'S' CHECK (tipopagamento IN ('S', 'N')),
 data_compra DATE,
 FOREIGN KEY (cod_cliente) REFERENCES tb_clientes(cod_cliente)
 );
  CREATE TABLE tb_produtos (
 cod_produto INT AUTO_INCREMENT PRIMARY KEY,
-ativo VARCHAR(1) NOT NULL,
+ativo VARCHAR(1) DEFAULT 'S' CHECK (ativo IN ('S', 'N')),
 valor FLOAT(5,2),
 tamanho BIGINT,
 descricao VARCHAR(50));
