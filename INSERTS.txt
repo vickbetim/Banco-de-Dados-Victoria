@@ -1,0 +1,39 @@
+INSERT INTO tb_clientes (cod_cliente, cod_cidade, nome, telefone, gmail, cpf, tipocliente, ativo, complemento, rua, numero, bairro, senha) VALUES 
+('1',’1’, ‘Daniela’, ‘45984216988','ncpatrick@gmail.com','09657712366', 'C', 'S','CASA', 'AVENIDA DAS TORRES', '186', 'FAG', '1234bolinho');
+('2',’2’, ‘Rayssa’,‘45989976533','rayssinha@gmail.com','997602234676', 'C', 'S','APARTAMENTO’', 'PASSARINHO', '45', 'CLARITO', 'paocom77');
+('3',’3’, ‘Jean’, ‘45977645390','jeancarlos@gmail.com','09978945689', 'C', 'S','CASA', 'JOAO ANTONIO DE MATOS', '201', 'PIONEIROS CATARINENSES', '45688nfj');
+('4',’4’, ‘Daniel Matos’, ‘4599956408','matdaniel@gmail.com','00975578990', 'C', 'S','CONDOMINIO', ‘ANDA LUCIA', '76', 'BARCELONA', 'diamant55');
+('5',’5’, ‘Petter’, ‘45998702288','jpetter@gmail.com','09987690453', 'C', 'S','CASA', 'VERA CRUZ', '709', 'CLAUDETE', 'Pgat544h');
+
+INSERT INTO tb_compras (cod_compra, cod_cliente, cod_entrega, valor_entrega, tipo_pagamento, data_compra)VALUES
+('1','1','1','450,99','DINHEIRO','23/09/2023);
+('2','2','2','500,00','DINHEIRO','12/07/2023);
+('3','3','3','760,99','DINHEIRO','10/08/2023);
+('4','4','4','900,67','DINHEIRO','09/01/2022);
+('5','5','5','234,00','DINHEIRO','30/05/2023);
+
+INSERT INTO tb_compras_produtos (cod_compra_produto, cod_compra_fk, cod_produto_fk, quantidade, valor)VALUES
+('1','1','1','2','901,99');
+('2','2','2','1','500,00');
+('3','3','3','1','760,99');
+('4','4','4','1','900,67');
+('5','5','5','1','234,00');
+
+INSERT INTO tb_imagens_produtos (cod_imagem_produto, cod_produto_fk, imagem_produto)VALUES
+('1','06','jpg');
+('2','06','jpg');
+('3','06','jpg');
+('4','06','jpg');
+('5','06','jpg');
+
+INSERT INTO tb_produtos (cod_produto, ativo, valor, tamanho, descricao) VALUES
+('1','S','450,99','3x4','Cor laranja');
+('2','S','500,00','4x4','Cor rosa, com janela');
+('3','N','760,99','6x4','Padrao preto, sem janela');
+('4','S','900,67','3x2','Verde com duas portas');
+('5','S','234,00','7x7','Cinza com preto');
+
+
+
+
+
