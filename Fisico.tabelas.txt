@@ -62,7 +62,7 @@ FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 
 
 
-INSERT INTO tb_cidades (id, nome, estado) VALUES
+INSERT INTO tb_cidades (cod_cidade, nome_cidade, estado) VALUES
 (2784, 'Abatiá', 'PR'),
 (2785, 'Adrianópolis', 'PR'),
 (2786, 'Agudos do Sul', 'PR'),
