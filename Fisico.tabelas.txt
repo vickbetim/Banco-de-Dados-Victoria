@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS tb_imagens_produtos;
 DROP TABLE IF EXISTS tb_compras_produtos;
-DROP TABLE IF EXISTS  tb_clientes;
 DROP TABLE IF EXISTS tb_compras;
+DROP TABLE IF EXISTS  tb_clientes;
 DROP TABLE IF EXISTS tb_produtos;
 DROP TABLE IF EXISTS  tb_cidades;
 
