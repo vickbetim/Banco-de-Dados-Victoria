@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS tb_imagens_produtos;
+DROP TABLE IF EXISTS tb_compras_produtos;
+DROP TABLE IF EXISTS  tb_clientes;
+DROP TABLE IF EXISTS tb_compras;
+DROP TABLE IF EXISTS tb_produtos;
+DROP TABLE IF EXISTS  tb_cidades;
+
 CREATE TABLE tb_cidades (
 cod_cidade INT AUTO_INCREMENT PRIMARY KEY,
 nome_cidade VARCHAR(50) NOT NULL,  
@@ -24,7 +31,7 @@ cod_compra INT AUTO_INCREMENT PRIMARY KEY,
 cod_cliente INT,
 cod_entrega VARCHAR(50),
 valor_entrega FLOAT(5,2),
-tipo_pagamento VARCHAR(8) DEFAULT 'S' CHECK (tipopagamento IN ('DINHEIRO')),
+tipo_pagamento VARCHAR(8) DEFAULT 'DINHEIRO' CHECK (tipo_pagamento IN ('DINHEIRO')),
 data_compra DATE,
 FOREIGN KEY (cod_cliente) REFERENCES tb_clientes(cod_cliente)
 );
@@ -52,6 +59,7 @@ PRIMARY KEY(cod_compra_produto),
 FOREIGN KEY (cod_compra) REFERENCES tb_compras(cod_compra),
 FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
+
 
 
 INSERT INTO tb_cidades (id, nome, estado) VALUES
